@@ -48,14 +48,17 @@ class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          value={this.state.userName}
-          onChange={event => this.setState({ userName: event.target.value })}
-          placeholder="GitHub username"
-          required
-        />
-        <button>Add card</button>
+        <div class="form-group">
+          <input  type="text" 
+                  id="git-handle"
+                  class="form-control" 
+                  value={this.state.userName}
+                  onChange={event => this.setState({ userName: event.target.value })}
+                  placeholder="GitHub username"
+                  required />
+          <label for="git-handle"> Enter your Github handle </label>
+        </div>
+        <button type="submit" class="btn btn-md ml-3 mb-5 btn-primary">Submit</button>
       </form>
     );
   }
